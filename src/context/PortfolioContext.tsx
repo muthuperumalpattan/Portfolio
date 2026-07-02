@@ -89,7 +89,7 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
       .then(setData)
       .catch(() =>
         showToast(
-          'Could not load data from server. Run "npm run dev" to start the API, then refresh.',
+          'Could not load data from server. Check Netlify environment variables (DATABASE_URL) and redeploy.',
           'error',
         ),
       )

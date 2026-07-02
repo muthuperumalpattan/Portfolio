@@ -28,6 +28,26 @@ export function createApp() {
     }
   })
 
+  app.use((err: unknown, _req: express.Request, res: express.Response, next: express.NextFunction) => {
+    if (res.headersSent) {
+      next(err)
+      return
+    }
+
+    const message = err instanceof Error ? err.message : 'Internal server error'
+    console.error('API error:', err)
+
+    if (message.includes('DATABASE_URL')) {
+      res.status(503).json({
+        success: false,
+        message: 'Server is missing DATABASE_URL. Add environment variables in Netlify.',
+      })
+      return
+    }
+
+    res.status(500).json({ success: false, message })
+  })
+
   app.get('/api/health', async (_req, res) => {
     res.json({ status: 'ok', database: 'connected' })
   })

@@ -68,27 +68,29 @@ git push -u origin main
    - **Publish directory:** `dist`
    - **Functions directory:** `netlify/functions`
 
-### Step 3: Add environment variables
+### Step 3: Add environment variables (required)
+
+Your API is already deployed on Netlify, but it **will not work** until you add env vars.
 
 In Netlify: **Site configuration** → **Environment variables** → **Add a variable**
 
-Add every value from your `.env` file:
+Add **every** variable from your local `.env` file (see `netlify.env.example` for the list):
 
-| Variable | Example |
-|----------|---------|
-| `DATABASE_URL` | Your Neon PostgreSQL connection string |
-| `EDIT_USERNAME` | Your edit panel username |
-| `SESSION_SECRET` | A long random secret string |
-| `SMTP_HOST` | `smtp.gmail.com` |
-| `SMTP_PORT` | `587` |
-| `SMTP_USER` | `muthuperumal465@gmail.com` |
-| `SMTP_PASS` | Your Gmail App Password |
-| `CONTACT_FROM_EMAIL` | `muthuperumal465@gmail.com` |
-| `CONTACT_TO_EMAIL` | `muthuperumal465@gmail.com` |
-| `CONTACT_OWNER_NAME` | `Muthu Perumal` |
-| `SMTP_TLS_REJECT_UNAUTHORIZED` | `false` |
+| Variable | Required |
+|----------|----------|
+| `DATABASE_URL` | Yes — Neon PostgreSQL connection string |
+| `EDIT_USERNAME` | Yes |
+| `SESSION_SECRET` | Yes — any long random string |
+| `SMTP_HOST` | Yes — for contact form |
+| `SMTP_PORT` | Yes |
+| `SMTP_USER` | Yes |
+| `SMTP_PASS` | Yes — Gmail App Password |
+| `CONTACT_FROM_EMAIL` | Yes |
+| `CONTACT_TO_EMAIL` | Yes |
+| `CONTACT_OWNER_NAME` | Yes |
+| `SMTP_TLS_REJECT_UNAUTHORIZED` | Yes — set to `false` |
 
-> Do **not** commit `.env` to GitHub. Set secrets only in Netlify.
+After adding variables, go to **Deploys** → **Trigger deploy** → **Deploy site** (env vars only apply after redeploy).
 
 ### Step 4: Deploy
 
