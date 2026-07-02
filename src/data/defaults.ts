@@ -10,7 +10,7 @@ export const defaultPortfolio: PortfolioData = {
     phone: '+95 97707876',
     email: 'muthuperumal465@gmail.com',
     location: 'Myanmar',
-    image: '/profile.svg',
+    image: '/muthu.jpg',
     social: {
       github: 'https://github.com',
       linkedin: 'https://www.linkedin.com/in/muthu-perumal-110b7925b/',

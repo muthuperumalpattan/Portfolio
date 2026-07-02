@@ -5,6 +5,8 @@ import { usePortfolio } from '../context/PortfolioContext'
 export default function Hero() {
   const { data } = usePortfolio()
   const { profile } = data
+  const profileImage =
+    profile.image && profile.image !== '/profile.svg' ? profile.image : '/muthu.jpg'
 
   return (
     <section id="home" className="hero">
@@ -110,7 +112,7 @@ export default function Hero() {
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: 'spring', stiffness: 300 }}
               >
-                <img src={'/public/muthu.jpg'} alt={profile.name} />
+                <img src={profileImage} alt={profile.name} />
               </motion.div>
               <motion.div
                 className="hero__badge"
