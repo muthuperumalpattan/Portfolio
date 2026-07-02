@@ -1,0 +1,171 @@
+/* ── Shared tokens (theme-independent) ── */
+:root {
+  --font-family: "Inter", system-ui, -apple-system, sans-serif;
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-base: 1rem;
+  --font-lg: 1.125rem;
+  --font-xl: 1.25rem;
+  --font-2xl: 1.5rem;
+  --font-3xl: 1.875rem;
+  --font-4xl: 2.25rem;
+  --font-5xl: 3rem;
+  --font-6xl: 3.75rem;
+  --leading-tight: 1.2;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.75;
+  --tracking-wide: 0.08em;
+  --tracking-wider: 0.12em;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-28: 7rem;
+
+  --container-max: 72rem;
+  --container-narrow: 42rem;
+  --container-medium: 56rem;
+  --container-padding: 1.5rem;
+  --section-padding-y: 5.5rem;
+  --nav-height: 4.5rem;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-theme: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ── Dark theme (default) ── */
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-bg: #09090f;
+  --color-bg-elevated: #0e0e16;
+  --color-bg-card: #13131d;
+  --color-bg-input: #0c0c14;
+  --color-border: #262636;
+  --color-border-hover: #3a3a50;
+  --color-text: #f8f8fc;
+  --color-text-secondary: #c8c8d4;
+  --color-muted: #9494a8;
+  --color-accent: #6366f1;
+  --color-accent-light: #818cf8;
+  --color-accent-dark: #4f46e5;
+  --color-accent-glow: rgba(99, 102, 241, 0.25);
+  --color-accent-subtle: rgba(99, 102, 241, 0.12);
+  --color-on-accent: #ffffff;
+
+  --color-navbar-scrolled: rgba(9, 9, 15, 0.88);
+  --color-overlay: rgba(0, 0, 0, 0.6);
+  --color-overlay-heavy: rgba(0, 0, 0, 0.65);
+  --color-hero-grid: rgba(99, 102, 241, 0.03);
+  --color-hero-glow-left: rgba(99, 102, 241, 0.2);
+  --color-hero-glow-right: rgba(139, 92, 246, 0.15);
+  --color-hero-avatar-glow: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(139, 92, 246, 0.2));
+  --color-project-gradient: linear-gradient(135deg, rgba(99, 102, 241, 0.15), var(--color-bg) 50%, rgba(139, 92, 246, 0.08));
+  --color-project-icon: rgba(99, 102, 241, 0.4);
+  --color-contact-glow: rgba(99, 102, 241, 0.15);
+  --color-panel-shadow: -8px 0 40px rgba(0, 0, 0, 0.4);
+  --color-modal-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.25);
+  --shadow-card-hover: 0 8px 32px rgba(0, 0, 0, 0.32);
+  --shadow-glow: 0 8px 32px var(--color-accent-glow);
+  --shadow-navbar: none;
+
+  --color-toast-error-bg: #1a1218;
+  --color-toast-error-border: rgba(248, 113, 113, 0.4);
+  --color-toast-error-text: #fca5a5;
+  --color-toast-success-bg: #101a14;
+  --color-toast-success-border: rgba(74, 222, 128, 0.35);
+  --color-toast-success-text: #86efac;
+
+  --gradient-text: linear-gradient(135deg, #a5b4fc 0%, #6366f1 50%, #a78bfa 100%);
+}
+
+/* ── Light theme ── */
+[data-theme="light"] {
+  color-scheme: light;
+
+  --color-bg: #e8ecf6;
+  --color-bg-elevated: #f3f5fc;
+  --color-bg-card: #ffffff;
+  --color-bg-input: #eef1fa;
+  --color-border: #cdd5ea;
+  --color-border-hover: #9aa8d4;
+  --color-text: #0f172a;
+  --color-text-secondary: #334155;
+  --color-muted: #64748b;
+  --color-accent: #5b5ef5;
+  --color-accent-light: #4338ca;
+  --color-accent-dark: #3730a3;
+  --color-accent-glow: rgba(91, 94, 245, 0.28);
+  --color-accent-subtle: rgba(91, 94, 245, 0.12);
+  --color-on-accent: #ffffff;
+
+  --color-bg-gradient:
+    radial-gradient(ellipse 90% 60% at 10% -5%, rgba(99, 102, 241, 0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 95% 5%, rgba(139, 92, 246, 0.14) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 40% at 50% 100%, rgba(99, 102, 241, 0.08) 0%, transparent 60%),
+    linear-gradient(180deg, #eef1fa 0%, #e8ecf6 100%);
+  --color-bg-elevated-gradient:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(243, 245, 252, 0.95) 100%);
+
+  --color-navbar-scrolled: rgba(255, 255, 255, 0.82);
+  --color-overlay: rgba(15, 23, 42, 0.4);
+  --color-overlay-heavy: rgba(15, 23, 42, 0.52);
+  --color-hero-grid: rgba(99, 102, 241, 0.1);
+  --color-hero-glow-left: rgba(99, 102, 241, 0.28);
+  --color-hero-glow-right: rgba(139, 92, 246, 0.22);
+  --color-hero-avatar-glow: linear-gradient(135deg, rgba(99, 102, 241, 0.35), rgba(139, 92, 246, 0.22));
+  --color-project-gradient: linear-gradient(135deg, rgba(99, 102, 241, 0.16), #f3f5fc 45%, rgba(139, 92, 246, 0.12));
+  --color-project-icon: rgba(91, 94, 245, 0.55);
+  --color-contact-glow: rgba(99, 102, 241, 0.2);
+  --color-panel-shadow: -8px 0 40px rgba(91, 94, 245, 0.1);
+  --color-modal-shadow: 0 24px 64px rgba(15, 23, 42, 0.14);
+
+  --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(91, 94, 245, 0.1);
+  --shadow-card-hover: 0 4px 8px rgba(15, 23, 42, 0.06), 0 16px 40px rgba(91, 94, 245, 0.16);
+  --shadow-glow: 0 8px 32px var(--color-accent-glow);
+  --shadow-navbar: 0 1px 0 rgba(91, 94, 245, 0.08), 0 8px 24px rgba(15, 23, 42, 0.06);
+
+  --color-toast-error-bg: #fef2f2;
+  --color-toast-error-border: rgba(239, 68, 68, 0.35);
+  --color-toast-error-text: #b91c1c;
+  --color-toast-success-bg: #f0fdf4;
+  --color-toast-success-border: rgba(34, 197, 94, 0.35);
+  --color-toast-success-text: #15803d;
+
+  --gradient-text: linear-gradient(135deg, #3730a3 0%, #5b5ef5 45%, #7c3aed 100%);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --container-padding: 2rem;
+    --section-padding-y: 7rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --container-padding: 2.5rem;
+    --section-padding-y: 8rem;
+  }
+}

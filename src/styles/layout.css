@@ -1,0 +1,132 @@
+/* ── Container ── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.container--narrow {
+  max-width: var(--container-narrow);
+}
+
+.container--medium {
+  max-width: var(--container-medium);
+}
+
+/* ── Section ── */
+.section {
+  padding-top: var(--section-padding-y);
+  padding-bottom: var(--section-padding-y);
+}
+
+.section--elevated {
+  background-color: var(--color-bg-elevated);
+}
+
+[data-theme="light"] .section--elevated {
+  background-color: transparent;
+  background-image: var(--color-bg-elevated-gradient);
+  border-top: 1px solid rgba(91, 94, 245, 0.08);
+  border-bottom: 1px solid rgba(91, 94, 245, 0.08);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-16);
+}
+
+.section-header__label {
+  font-size: var(--font-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-accent-light);
+  margin-bottom: var(--space-3);
+}
+
+.section-header__title {
+  font-size: var(--font-3xl);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+}
+
+.section-header__subtitle {
+  font-size: var(--font-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-muted);
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .section-header__title {
+    font-size: var(--font-4xl);
+  }
+
+  .section-header__subtitle {
+    font-size: var(--font-lg);
+  }
+}
+
+/* ── Grids ── */
+.grid-2 {
+  display: grid;
+  gap: var(--space-10);
+}
+
+.grid-2--lg {
+  gap: var(--space-16);
+}
+
+.grid-3 {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 640px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ── Flex helpers ── */
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.gap-4 { gap: var(--space-4); }
+.gap-5 { gap: var(--space-5); }
+.gap-6 { gap: var(--space-6); }
+.gap-8 { gap: var(--space-8); }
+
+.content-narrow {
+  max-width: var(--container-narrow);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.content-medium {
+  max-width: var(--container-medium);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
