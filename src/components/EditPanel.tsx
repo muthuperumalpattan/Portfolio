@@ -44,7 +44,13 @@ export default function EditPanel() {
   const [newSkill, setNewSkill] = useState({ name: '', level: 75, category: 'frontend' as SkillCategory })
   const [newExp, setNewExp] = useState({ company: '', period: '', role: '', description: '' })
   const [newEdu, setNewEdu] = useState({ year: '', institution: '', degree: '' })
-  const [newProject, setNewProject] = useState({ year: '', title: '', description: '', tags: '' })
+  const [newProject, setNewProject] = useState({
+    year: '',
+    title: '',
+    description: '',
+    tags: '',
+    url: '',
+  })
 
   const handleAddSkill = () => {
     if (!newSkill.name.trim()) return
@@ -71,8 +77,9 @@ export default function EditPanel() {
       title: newProject.title,
       description: newProject.description,
       tags: newProject.tags.split(',').map((t) => t.trim()).filter(Boolean),
+      url: newProject.url.trim() || undefined,
     })
-    setNewProject({ year: '', title: '', description: '', tags: '' })
+    setNewProject({ year: '', title: '', description: '', tags: '', url: '' })
   }
 
   return (
@@ -424,6 +431,11 @@ export default function EditPanel() {
                         onChange={(e) => updateProject(project.id, { year: e.target.value })}
                         placeholder="Year"
                       />
+                      <input
+                        value={project.url || ''}
+                        onChange={(e) => updateProject(project.id, { url: e.target.value })}
+                        placeholder="Website URL (https://...)"
+                      />
                       <textarea
                         rows={3}
                         value={project.description}
@@ -453,6 +465,11 @@ export default function EditPanel() {
                       placeholder="Year"
                       value={newProject.year}
                       onChange={(e) => setNewProject({ ...newProject, year: e.target.value })}
+                    />
+                    <input
+                      placeholder="Website URL (https://...)"
+                      value={newProject.url}
+                      onChange={(e) => setNewProject({ ...newProject, url: e.target.value })}
                     />
                     <textarea
                       rows={3}

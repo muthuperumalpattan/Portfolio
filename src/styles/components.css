@@ -717,6 +717,12 @@
   transition: border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
 }
 
+a.project-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 .project-card:hover {
   border-color: rgba(99, 102, 241, 0.4);
   box-shadow: var(--shadow-card-hover);
